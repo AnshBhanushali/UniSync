@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* UniSync Design System - Calm, Academic, Trustworthy */
+
+@layer base {
+  :root {
+    /* Base colors - Warm neutral foundation */
+    --background: 40 20% 98%;
+    --foreground: 220 25% 12%;
+
+    /* Card surfaces */
+    --card: 40 15% 99%;
+    --card-foreground: 220 25% 12%;
+
+    /* Popover/Modal surfaces */
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 12%;
+
+    /* Primary - Muted teal, academic and trustworthy */
+    --primary: 185 35% 38%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Soft warm gray */
+    --secondary: 40 15% 94%;
+    --secondary-foreground: 220 20% 25%;
+
+    /* Muted surfaces */
+    --muted: 40 12% 92%;
+    --muted-foreground: 220 15% 45%;
+
+    /* Accent - Subtle highlight */
+    --accent: 185 30% 95%;
+    --accent-foreground: 185 35% 30%;
+
+    /* Destructive */
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Borders and inputs */
+    --border: 40 15% 88%;
+    --input: 40 15% 88%;
+    --ring: 185 35% 38%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 40 18% 96%;
+    --sidebar-foreground: 220 20% 25%;
+    --sidebar-primary: 185 35% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 185 30% 95%;
+    --sidebar-accent-foreground: 185 35% 30%;
+    --sidebar-border: 40 15% 90%;
+    --sidebar-ring: 185 35% 38%;
+
+    /* UniSync Custom Tokens */
+    --unisync-surface: 40 20% 99%;
+    --unisync-surface-elevated: 0 0% 100%;
+    --unisync-border-subtle: 40 12% 92%;
+    --unisync-text-tertiary: 220 12% 55%;
+    
+    /* Source colors */
+    --source-canvas: 220 75% 55%;
+    --source-calendar: 35 85% 55%;
+    --source-email: 350 70% 55%;
+    --source-events: 160 60% 45%;
+    
+    /* Chat bubbles */
+    --chat-user: 185 35% 38%;
+    --chat-user-foreground: 0 0% 100%;
+    --chat-assistant: 40 15% 97%;
+    --chat-assistant-foreground: 220 25% 12%;
+  }
+
+  .dark {
+    --background: 220 20% 8%;
+    --foreground: 40 15% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 40 15% 92%;
+
+    --primary: 185 40% 50%;
+    --primary-foreground: 220 20% 8%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 40 12% 85%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 40 10% 55%;
+
+    --accent: 185 30% 18%;
+    --accent-foreground: 185 40% 75%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 18%;
+    --input: 220 15% 18%;
+    --ring: 185 40% 50%;
+
+    --sidebar-background: 220 18% 7%;
+    --sidebar-foreground: 40 12% 85%;
+    --sidebar-primary: 185 40% 50%;
+    --sidebar-primary-foreground: 220 20% 8%;
+    --sidebar-accent: 185 30% 18%;
+    --sidebar-accent-foreground: 185 40% 75%;
+    --sidebar-border: 220 15% 15%;
+    --sidebar-ring: 185 40% 50%;
+
+    --unisync-surface: 220 18% 9%;
+    --unisync-surface-elevated: 220 15% 12%;
+    --unisync-border-subtle: 220 15% 16%;
+    --unisync-text-tertiary: 40 8% 50%;
+    
+    --source-canvas: 220 70% 65%;
+    --source-calendar: 35 80% 60%;
+    --source-email: 350 65% 60%;
+    --source-events: 160 55% 55%;
+    
+    --chat-user: 185 40% 50%;
+    --chat-user-foreground: 220 20% 8%;
+    --chat-assistant: 220 15% 14%;
+    --chat-assistant-foreground: 40 15% 92%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Smooth focus states */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+  }
+}
+
+@layer components {
+  /* UniSync specific components */
+  .unisync-surface {
+    @apply bg-[hsl(var(--unisync-surface))];
+  }
+
+  .unisync-surface-elevated {
+    @apply bg-[hsl(var(--unisync-surface-elevated))] shadow-sm;
+  }
+
+  .unisync-text-tertiary {
+    @apply text-[hsl(var(--unisync-text-tertiary))];
+  }
+
+  .unisync-border-subtle {
+    @apply border-[hsl(var(--unisync-border-subtle))];
+  }
+
+  /* Source badges */
+  .source-badge-canvas {
+    @apply bg-[hsl(var(--source-canvas)/0.1)] text-[hsl(var(--source-canvas))];
+  }
+  
+  .source-badge-calendar {
+    @apply bg-[hsl(var(--source-calendar)/0.1)] text-[hsl(var(--source-calendar))];
+  }
+  
+  .source-badge-email {
+    @apply bg-[hsl(var(--source-email)/0.1)] text-[hsl(var(--source-email))];
+  }
+  
+  .source-badge-events {
+    @apply bg-[hsl(var(--source-events)/0.1)] text-[hsl(var(--source-events))];
+  }
+
+  /* Chat message styles */
+  .chat-bubble-user {
+    @apply bg-[hsl(var(--chat-user))] text-[hsl(var(--chat-user-foreground))];
+  }
+  
+  .chat-bubble-assistant {
+    @apply bg-[hsl(var(--chat-assistant))] text-[hsl(var(--chat-assistant-foreground))];
+  }
+}
+
+@layer utilities {
+  /* Smooth transitions */
+  .transition-smooth {
+    @apply transition-all duration-200 ease-out;
+  }
+
+  /* Hover lift effect */
+  .hover-lift {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-md;
+  }
+
+  /* Fade in animation */
+  .animate-fade-in {
+    animation: fadeIn 0.3s ease-out forwards;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.4s ease-out forwards;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 0.3s ease-out forwards;
+  }
+
+  .animate-slide-in-left {
+    animation: slideInLeft 0.3s ease-out forwards;
+  }
+
+  /* Stagger children */
+  .stagger-children > * {
+    @apply animate-fade-in-up;
+  }
+
+  .stagger-children > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger-children > *:nth-child(2) { animation-delay: 50ms; }
+  .stagger-children > *:nth-child(3) { animation-delay: 100ms; }
+  .stagger-children > *:nth-child(4) { animation-delay: 150ms; }
+  .stagger-children > *:nth-child(5) { animation-delay: 200ms; }
+  .stagger-children > *:nth-child(6) { animation-delay: 250ms; }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
